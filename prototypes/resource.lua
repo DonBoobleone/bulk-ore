@@ -45,7 +45,7 @@ local bulk_ore_resource = {
             scale = 0.5
         }
     },
-    map_color = {0.2, 0.7, 0.3}, -- TODO, only changes color with new map
+    map_color = {0.2, 0.4, 0.3}, -- TODO: Find better color, only changes color with new map gen
     mining_visualisation_tint = { r = 0.5, g = 0.5, b = 0.5, a = 1.0 },
     factoriopedia_simulation = factoriopedia_bulk_ore_simulations
 }

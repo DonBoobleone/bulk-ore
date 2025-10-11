@@ -9,7 +9,8 @@ local bulk_ore_item = {
         { size = 64, filename = "__bulk-ore__/graphics/icons/bulk-ore.png",   scale = 0.5, mipmap_count = 4 },
         { size = 64, filename = "__bulk-ore__/graphics/icons/bulk-ore-1.png", scale = 0.5, mipmap_count = 4 },
         { size = 64, filename = "__bulk-ore__/graphics/icons/bulk-ore-2.png", scale = 0.5, mipmap_count = 4 },
-        { size = 64, filename = "__bulk-ore__/graphics/icons/bulk-ore-3.png", scale = 0.5, mipmap_count = 4 }
+        { size = 64, filename = "__bulk-ore__/graphics/icons/bulk-ore-3.png", scale = 0.5, mipmap_count = 4 },
+        { size = 64, filename = "__bulk-ore__/graphics/icons/bulk-ore-4.png", scale = 0.5, mipmap_count = 4 }
     },
     subgroup = "raw-resource",
     order = "b[bulk-ore]",

@@ -1,9 +1,9 @@
 {
   "name": "bulk-ore", 
-  "version": "0.1.0",
+  "version": "0.1.1",
   "title": "Bulk Ore",
   "author": "Don Boobleone",
   "factorio_version": "2.0",
   "dependencies": ["base >= 2.0", "?space-age >= 2.0"],
-  "description": "A raw-resource style mixed-ore, which needs to be sorted by hand/recycling/centrifuge\nYields:\nIron, Copper, Coal, Stone, Uranium\nAll yields are adjustable in % via options"
+  "description": "A raw-resource style mixed-ore, which needs to be sorted by hand/recycling/centrifuge or washed through in a chemical plant\nYields: Iron, Copper, Coal, Stone, Uranium\nAll yields are adjustable in % via options"
 }

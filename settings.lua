@@ -7,7 +7,7 @@ data:extend({
         order = "a"
         -- add info text: allow ore-separation in assembling_machines
     },
-    -- Common info for yields is it is in %
+    -- Common info for yields: it is in %
     {
         type = "int-setting",
         name = "iron-yield",

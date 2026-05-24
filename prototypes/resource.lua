@@ -4,7 +4,7 @@ require("__base__/prototypes/factoriopedia-util")
 local factoriopedia_bulk_ore_simulations = { init = make_resource("bulk-ore") }
 
 -- Initialize patch
-resource_autoplace.initialize_patch_set("bulk-ore", true)
+resource_autoplace.initialize_patch_set("bulk-ore", settings.startup["starting-area-placement"].value)
 
 local bulk_ore_resource = {
     type = "resource",
@@ -29,7 +29,7 @@ local bulk_ore_resource = {
         order = "b",
         base_density = 8,
         base_spots_per_km2 = 1.25,
-        has_starting_area_placement = true,
+        has_starting_area_placement = settings.startup["starting-area-placement"].value,
         regular_rq_factor_multiplier = 1.1,
         starting_rq_factor_multiplier = 0.8,
         candidate_spot_count = 21

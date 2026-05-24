@@ -1,10 +1,21 @@
 # Bulk Ore - A Mod for Factorio
 
-This mod adds:
+## Resource Patch
+- Bulk Ore
 
-Bulk-ore a minable resource type which can be separated into basic ores.
-Can be recycled by hand or recycler (Fulgora scrap style) or using a centrifuge.
-Can be separated by washing it with light sulfuric-acid solution in a chemical plant. 
+## Recipes
+- Bulk Ore Separation
+![Bulk Ore Separation](https://raw.githubusercontent.com/DonBoobleone/bulk-ore/refs/heads/main/readme_images/bulk-ore-separation-recipe.png)
+- Bulk Ore Washing
+![Bulk Ore Washingn](https://raw.githubusercontent.com/DonBoobleone/bulk-ore/refs/heads/main/readme_images/bulk-ore-washing-recipe.png)
 
-Yields are configurable in startup options, default values will evolve through testing.
-You can enable easy sorting, if you don't want to wait till centrifuges to automate sorting.
+## Settings
+- Bulk-ore patch in starting area (Default = true)
+- Adjustable recipe yields.
+- Enable/Disable different supported planets. (Warning: enabling a planet in existing save will only work on newly generated chunks)
+
+## Supported Planets
+- Nauvis (Default = true)
+- Moshine
+- Corrondum
+- Arig

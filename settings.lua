@@ -5,7 +5,6 @@ data:extend({
         setting_type = "startup",
         default_value = false,
         order = "a"
-        -- add info text: allow ore-separation in assembling_machines
     },
     -- Common info for yields: it is in %
     {
@@ -61,3 +60,8 @@ data:extend({
         order = "c"
     }
 })
+
+
+--Supported planet settings come here
+-- TODO: Analysis: resource generation settings probably only work on newly generated chunks if enabled late, or not at all
+-- At first we put this in the description as a warning.

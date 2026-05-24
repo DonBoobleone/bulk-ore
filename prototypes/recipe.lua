@@ -12,6 +12,7 @@ local basic_resource_results = {
     { type = "item", name = "uranium-ore", amount = 1, probability = uranium_yield / 100, show_details_in_recipe_tooltip = false }
 }
 
+-- TODO check if this works by default on configuration changed
 function adjust_washing_yield_amount(results, multiplier)
     local adjusted_results = {}
     for _, result in ipairs(results) do
@@ -41,7 +42,7 @@ local bulk_ore_separation_recipe =
         }
     },
     category = "recycling-or-hand-crafting",
-    additional_categories = { "centrifuging" }, -- possibly "crushing"
+    additional_categories = { "centrifuging" }, -- IDEA: possibly "crushing" -> but that should yield soemthing else
     subgroup = "raw-resource",
     order = "b[bulk-ore]-a[bulk-ore-recycling]",
     enabled = false,
@@ -53,7 +54,6 @@ local bulk_ore_separation_recipe =
 }
 
 -- Enable easy sorting (allows ore separation in basic crafting category machines)
--- Might need to be deprecated if washing is better.
 if settings.startup["easy-sorting"].value then
     table.insert(bulk_ore_separation_recipe.additional_categories, "crafting")
 end

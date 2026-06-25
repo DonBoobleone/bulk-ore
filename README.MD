@@ -15,7 +15,4 @@
 - Enable/Disable different supported planets. (Warning: enabling a planet in existing save will only work on newly generated chunks)
 
 ## Supported Planets
-- Nauvis (Default = true)
-- Moshine
-- Corrondum
-- Arig
+- Nauvis

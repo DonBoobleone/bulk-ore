@@ -12,7 +12,7 @@ local bulk_ore_separation_technology = {
     prerequisites = nil,
     research_trigger = {
         type = "mine-entity",
-        entity = "bulk-ore"
+        entities = {"bulk-ore"}
     }
 }
 

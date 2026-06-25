@@ -60,8 +60,3 @@ data:extend({
         order = "c"
     }
 })
-
-
---Supported planet settings come here
--- TODO: Analysis: resource generation settings probably only work on newly generated chunks if enabled late, or not at all
--- At first we put this in the description as a warning.

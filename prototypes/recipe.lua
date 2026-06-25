@@ -5,14 +5,13 @@ local stone_yield = settings.startup["stone-yield"].value
 local uranium_yield = settings.startup["uranium-yield"].value
 
 local basic_resource_results = {
-    { type = "item", name = "iron-ore",    amount = 1, probability = iron_yield / 100,    show_details_in_recipe_tooltip = false },
-    { type = "item", name = "copper-ore",  amount = 1, probability = copper_yield / 100,  show_details_in_recipe_tooltip = false },
-    { type = "item", name = "coal",        amount = 1, probability = coal_yield / 100,    show_details_in_recipe_tooltip = false },
-    { type = "item", name = "stone",       amount = 1, probability = stone_yield / 100,   show_details_in_recipe_tooltip = false },
-    { type = "item", name = "uranium-ore", amount = 1, probability = uranium_yield / 100, show_details_in_recipe_tooltip = false }
+    { type = "item", name = "iron-ore",    amount = 1, independent_probability = iron_yield / 100,    show_details_in_recipe_tooltip = false },
+    { type = "item", name = "copper-ore",  amount = 1, independent_probability = copper_yield / 100,  show_details_in_recipe_tooltip = false },
+    { type = "item", name = "coal",        amount = 1, independent_probability = coal_yield / 100,    show_details_in_recipe_tooltip = false },
+    { type = "item", name = "stone",       amount = 1, independent_probability = stone_yield / 100,   show_details_in_recipe_tooltip = false },
+    { type = "item", name = "uranium-ore", amount = 1, independent_probability = uranium_yield / 100, show_details_in_recipe_tooltip = false }
 }
 
--- TODO check if this works by default on configuration changed
 function adjust_washing_yield_amount(results, multiplier)
     local adjusted_results = {}
     for _, result in ipairs(results) do
@@ -23,6 +22,11 @@ function adjust_washing_yield_amount(results, multiplier)
         table.insert(adjusted_results, new_result)
     end
     return adjusted_results
+end
+
+local crafting_categories = { "centrifuging" , "hand-crafting"}
+if mods["recycler"] then
+    table.insert(crafting_categories, "recycling" )
 end
 
 local bulk_ore_separation_recipe =
@@ -41,8 +45,7 @@ local bulk_ore_separation_recipe =
             icon = "__bulk-ore__/graphics/icons/recycling-top.png"
         }
     },
-    category = "recycling-or-hand-crafting",
-    additional_categories = { "centrifuging" }, -- IDEA: possibly "crushing" -> but that should yield soemthing else
+    categories = crafting_categories,
     subgroup = "raw-resource",
     order = "b[bulk-ore]-a[bulk-ore-recycling]",
     enabled = false,
@@ -55,12 +58,7 @@ local bulk_ore_separation_recipe =
 
 -- Enable easy sorting (allows ore separation in basic crafting category machines)
 if settings.startup["easy-sorting"].value then
-    table.insert(bulk_ore_separation_recipe.additional_categories, "crafting")
-end
-
-local additional_recipie_cataegories = nil
-if mods["space-age"] then
-    additional_recipie_cataegories = { "chemistry-or-cryogenics" }
+    table.insert(bulk_ore_separation_recipe.categories, "crafting")
 end
 
 local bulk_ore_washing_recipe =
@@ -84,8 +82,7 @@ local bulk_ore_washing_recipe =
             shift = { 8, -8 }
         }
     },
-    category = "chemistry",
-    additional_categories = additional_recipie_cataegories,
+    categories = { "chemistry" },
     subgroup = "raw-resource",
     order = "b[bulk-ore]-a[bulk-ore-washing]",
     enabled = false,
